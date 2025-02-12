@@ -1,0 +1,76 @@
+{
+    "$schema": "https://turbo.build/schema.json",
+    "globalEnv": [
+      "NEXT_PUBLIC_APP_ENV",
+      "NEXT_PUBLIC_APP_URL",
+      "DOCKER_REGISTRY",
+      "DOCKER_TAG",
+      "PORT",
+      "PAYMENT_PROVIDER",
+      "STRIPE_CURRENCY_CODE"
+    ],
+    "globalDependencies": [
+      ".env"
+    ],
+    "tasks": {
+      "build": {
+        "outputs": [
+          ".next/**",
+          "!.next/cache/**"
+        ],
+        "inputs": [
+          "$TURBO_DEFAULT$",
+          ".env.production.local",
+          ".env.local",
+          ".env.production",
+          ".env"
+        ]
+      },
+      "lint": {
+        "dependsOn": [
+          "^lint"
+        ]
+      },
+      "format": {
+        "dependsOn": [
+          "^format"
+        ]
+      },
+      "dev": {
+        "cache": false,
+        "persistent": true,
+        "inputs": [
+          "$TURBO_DEFAULT$",
+          ".env.development.local",
+          ".env.local",
+          ".env.development",
+          ".env"
+        ]
+      },
+      "start": {
+        "cache": false,
+        "persistent": true,
+        "inputs": [
+          "$TURBO_DEFAULT$",
+          ".env.development.local",
+          ".env.local",
+          ".env.development",
+          ".env"
+        ]
+      },
+      "clean": {
+        "cache": false,
+        "persistent": true,
+        "inputs": [
+          "$TURBO_DEFAULT$"
+        ]
+      },
+      "purge": {
+        "cache": false,
+        "persistent": true,
+        "inputs": [
+          "$TURBO_DEFAULT$"
+        ]
+      }
+    }
+  }

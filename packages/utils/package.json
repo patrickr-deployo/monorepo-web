@@ -1,0 +1,29 @@
+{
+  "name": "@package/utils",
+  "version": "0.0.0",
+  "private": true,
+  "exports": "./src/index.ts",
+  "scripts": {
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives",
+    "format": "eslint . --ext ts,tsx --fix",
+    "clean": "rimraf dist",
+    "purge": "rimraf dist && rimraf node_modules"
+  },
+  "dependencies": {
+    "axios": "^1.7.5",
+    "clsx": "^2.1.0",
+    "date-fns": "^3.6.0",
+    "next": "^14.2.3",
+    "tailwind-merge": "^2.2.1",
+    "zod": "^3.22.4"
+  },
+  "devDependencies": {
+    "@package/eslint-config": "workspace:*",
+    "@package/prettier-config": "workspace:*",
+    "@package/typescript-config": "workspace:*",
+    "@types/node": "^20.11.24"
+  },
+  "peerDependencies": {
+    "next": "^14.2.3"
+  }
+}

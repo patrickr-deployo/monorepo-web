@@ -1,0 +1,24 @@
+{
+  "name": "@package/store",
+  "version": "0.0.0",
+  "private": true,
+  "exports": "./src/index.ts",
+  "scripts": {
+    "clean": "rimraf dist",
+    "purge": "rimraf dist && rimraf node_modules"
+  },
+  "dependencies": {
+    "@package/utils": "workspace:*",
+    "@redux-devtools/extension": "^3.3.0",
+    "immer": "^10.1.1",
+    "zod": "^3.23.8",
+    "zustand": "^4.5.5"
+  },
+  "devDependencies": {
+    "@package/eslint-config": "workspace:*",
+    "@package/prettier-config": "workspace:*",
+    "@package/typescript-config": "workspace:*",
+    "@package/utils": "workspace:*",
+    "@package/api": "workspace:*"
+  }
+}
